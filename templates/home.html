@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- special character handling -->
     <meta charset="UTF-8">
+
+    <!-- makes website adaptable to different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/styles.css">
 
+    <!-- tab title -->
     <title>Home | Schedule</title>
 </head>
 <body>
 
+    <!-- sidebar-->
     <div class="sidenav">
         <div class="links">
+            <!-- big letter name -->
             <h1>Alan Jith</h1>
+
+            <!-- home link-->
             <a href="#" class="link">Home</a>
+            <!-- sign out link -->
             <a href="login" class="link">Sign out</a>
         </div>
     </div>
 
+    <!-- This section contains the main header of the page with a background color of #39d4c0 -->
     <header style="background: #39d4c0">
+        <!-- page title -->
         <h1 style="margin-left: 20%">Alan Jith's Schedule</h1>
     </header>
 
+    <!-- body stuff -->
     <div class="container content">
         <div class="schedule">
             <br>
+            <!-- each of the following divs represents a class period with clickable periods to navigate to the forums -->
             <div class="period clickable" data-url="period1"><br>Spanish 4, Mrs. Castro<br>Period 1<br><br></div>
             <div class="period clickable" data-url="period2"><br>AP Calc AB, Dr. Pena-Lopez<br>Period 2<br><br></div>
             <div class="period clickable" data-url="period3"><br>AP US History, Mrs. Simard<br>Period 3<br><br></div>
@@ -34,7 +48,10 @@
             <div class="period clickable" data-url="period7"><br>Physics 1, Ms. Macnamara<br>Period 7<br><br></div>
         </div>
     </div>
-<script src="static/js/script.js"></script>
-<script src="static/js/home.js"></script>
+
+    <!-- JS file links -->
+    <script src="static/js/script.js"></script>
+    <script src="static/js/home.js"></script>
+
 </body>
 </html>
