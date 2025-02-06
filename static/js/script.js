@@ -1,5 +1,6 @@
+//retrieves current user
 let current_user = JSON.parse(localStorage.getItem('current_user'));
-
+//changes the current page
 function changePage(link){
   window.location.href = link;
 }
@@ -11,7 +12,7 @@ function toTitleCase(str) {
     text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
   );
 }
-
+//check if the user is logged in
 function checkAccess() {
     console.log("yippee", current_user)
     if (current_user === null) {
@@ -21,7 +22,7 @@ function checkAccess() {
         console.log('all good');
     }
 }
-
+//logs out the user
 function logoutUser() {
     current_user = null;
 }
