@@ -41,7 +41,7 @@ function loadComments(threadId) {
                 div.classList.add("comment");
                 div.innerHTML = `
                     <p>${comment.content}</p>
-                    <button onclick="markHelpful(${comment.id})">This is helpful (${comment.helpful_count})</button>
+                    <button class="button" style="background-color: #fe9fab; border: 0" onclick="markHelpful(${comment.id})">This is helpful (${comment.helpful_count})</button>
                 `;
                 commentList.appendChild(div);
             });
