@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Forum</title>
+    <link rel="stylesheet" href="static/styles.css">
+
+</head>
+<body>
+
+    <div class="sidenav">
+        <div class="links">
+            <h1>Alan Jith</h1>
+            <a href="home" class="link">Home</a>
+            <a href="login" class="link">Sign out</a>
+        </div>
+    </div>
+
+    <header>
+        <h1 style="margin-left: 20%">Spanish 4 P1 Forum</h1>
+    </header>
+
+    <main>
+        <h2 class="content" id="create-thread-header">Create a New Thread</h2>
+        <form id="thread-form">
+            <input type="text" id="thread-title" style="font-family: Monaco;" placeholder="Thread Title" required>
+            <textarea id="thread-content" placeholder="Thread Content" required></textarea>
+            <button class="button" style="background-color: #fe9fab; border: 0" type="submit">Post Thread</button>
+        </form>
+
+        <h2 id="threads-header">Threads</h2>
+        <div id="thread-list"></div>
+
+        <div id="thread-details" style="display:none;">
+            <h2 id="thread-title-display"></h2>
+            <p id="thread-content-display"></p>
+
+            <h3>Comments</h3>
+            <div id="comment-list"></div>
+
+            <h3>Add a Comment</h3>
+            <form id="comment-form">
+                <textarea id="comment-content" placeholder="Write a comment..." required></textarea>
+                <button type="submit">Post Comment</button>
+            </form>
+
+            <button onclick="closeThread()">Back to Threads</button>
+        </div>
+        <button id="toggle-user-list" onclick="toggleUserList()" style="position: fixed; right: 20px;top: 20px; width: 75; height: 80;background-color: transparent; border:0;">
+            <img src="https://i.ibb.co/dv1Mnws/images-removebg-preview.png" alt="images-removebg-preview" border="0" width="77" height="77" ></button>
+<div id="user-list" style="position: fixed; right: 20px; top: 120px; width: 275px; background-color: #f0f0f0; border-left: 1px solid #ccc; padding: 10px; display: none;">
+    <h3>User List</h3>
+    <ul id="users"></ul>
+</div>
+
+
+    </main>
+
+    <script src="static/js/period1.js"></script>
+</body>
+</html>

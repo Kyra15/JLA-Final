@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>StudySquad Login</title>
+</head>
+
+<body>
+
+<div class="side-nav">
+    <div class="sidebar"></div>
+    <div class="logo"></div>
+</div>
+
+<br><br><br><br><br><br><br>
+
+<div class="login-body content">
+    <h1 style="text-align: center; padding-bottom: 0">StudySquad Login</h1>
+    <br>
+    <form class="login" id="loginform" onsubmit="validateForm(event)" style="text-align: center;">
+        <h2>
+            <span>Username: </span>
+            <input type="text" id="username" required>
+        </h2>
+        <h2>
+            <span>Password: </span>
+            <input type="password" id="password" required>
+            <i class="clickable fa fa-eye" id="eye-icon" style="margin-left: 5px;"></i>
+        </h2>
+        <br>
+        <button class="clickable button" type="submit">Login</button>
+    </form>
+
+    <script src="static/js/login.js"></script>
+    <script src="static/js/script.js"></script>
+</div>
+
+<img class="bottom-border" style="z-index: -10;" src="static/images/border.png">
