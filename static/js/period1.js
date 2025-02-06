@@ -1,6 +1,6 @@
 let currentThreadId = null;
 
-// Load Threads from API
+// loads threads from API
 function loadThreads() {
     fetch('/api/threads')
         .then(response => response.json())
@@ -17,7 +17,7 @@ function loadThreads() {
         });
 }
 
-// Open a Thread (Show Comments)
+// opens a thread (comments)
 function openThread(id, title, content) {
     currentThreadId = id;
     document.getElementById("thread-title-display").innerText = title;
@@ -28,7 +28,7 @@ function openThread(id, title, content) {
     loadComments(id);
 }
 
-// Load Comments for a Thread
+// loads comments for the elected thread
 
 function loadComments(threadId) {
     fetch(`/api/comments/${threadId}`)
@@ -48,20 +48,20 @@ function loadComments(threadId) {
         });
 }
 
-// Mark a Comment as Helpful
+// helpful marker buttong
 function markHelpful(commentId) {
     fetch(`/api/helpful/${commentId}`, { method: 'POST' })
         .then(response => response.json())
-        .then(() => loadComments(currentThreadId)); // Reload comments
+        .then(() => loadComments(currentThreadId)); // reloads comments
 }
 
-// Load Users
+//loads user list
 function loadUsers() {
     fetch('/api/users')
         .then(response => response.json())
         .then(data => {
             const userList = document.getElementById("users");
-            userList.innerHTML = ""; // Clear existing users
+            userList.innerHTML = ""; // clears current users
             data.forEach(user => {
                 const li = document.createElement("li");
                 li.innerHTML = `${user.name} (${user.role}) - ${user.email}`;
@@ -70,15 +70,15 @@ function loadUsers() {
         });
 }
 
-// Call loadUsers when the page loads
+// calls load users when the page loads
 window.onload = function() {
-    loadComments(currentThreadId); // Existing function to load comments
-    loadUsers(); // Load users
+    loadComments(currentThreadId); 
+    loadUsers(); 
 };
 
 
 
-// Create a New Thread
+// creates a new thread
 document.getElementById("thread-form").addEventListener("submit", function(event) {
     event.preventDefault();
     const title = document.getElementById("thread-title").value;
@@ -97,7 +97,7 @@ document.getElementById("thread-form").addEventListener("submit", function(event
     });
 });
 
-// Add a Comment to the Current Thread
+// adds a comment to thread
 document.getElementById("comment-form").addEventListener("submit", function(event) {
     event.preventDefault();
     if (currentThreadId === null) return;
@@ -116,7 +116,7 @@ document.getElementById("comment-form").addEventListener("submit", function(even
     });
 });
 
-// Close Thread View
+// closes thread
 function closeThread() {
     document.getElementById("thread-details").style.display = "none";
     document.getElementById("thread-list").style.display = "block";
@@ -124,58 +124,49 @@ function closeThread() {
     currentThreadId = null;
 }
 
-// Load Threads on Page Load
+// loads threads
 document.addEventListener("DOMContentLoaded", loadThreads);
 
-// Open a Thread (Show Comments)
+// opens a thread
 function openThread(id, title, content) {
     currentThreadId = id;
     document.getElementById("thread-title-display").innerText = title;
     document.getElementById("thread-content-display").innerText = content;
-
-    // Show thread details
     document.getElementById("thread-details").style.display = "block";
-
-    // Hide thread list and form
     document.getElementById("thread-list").style.display = "none";
     document.getElementById("thread-form").style.display = "none";
-
-    // Hide the "Threads" header
     document.getElementById("threads-header").style.display = "none";
-
-    // Hide "Create a New Thread" section
     document.getElementById("create-thread-header").style.display = "none";
 
     loadComments(id);
 }
 
-// Close Thread View (Go Back to Threads)
+// closes a thread
 function closeThread() {
     document.getElementById("thread-details").style.display = "none";
     document.getElementById("thread-list").style.display = "block";
     document.getElementById("thread-form").style.display = "block";
 
-    // Show headers again
     document.getElementById("threads-header").style.display = "block";
     document.getElementById("create-thread-header").style.display = "block";
 
     currentThreadId = null;
 }
-let userListVisible = false; // State to track visibility
+let userListVisible = false;
 
-// Toggle User List Visibility
+// toggles user visibility
 function toggleUserList() {
     const userList = document.getElementById("user-list");
-    userListVisible = !userListVisible; // Toggle the visibility state
+    userListVisible = !userListVisible; 
 
     if (userListVisible) {
-        userList.style.display = "block"; // Show the user list
+        userList.style.display = "block"; 
     } else {
-        userList.style.display = "none"; // Hide the user list
+        userList.style.display = "none";
     }
 }
 
-// Load Users
+
 function loadUsers() {
     fetch('/api/users')
         .then(response => response.json())
@@ -190,8 +181,9 @@ function loadUsers() {
         });
 }
 
-// Call loadUsers when the page loads
 window.onload = function() {
-    loadComments(currentThreadId); // Existing function to load comments
-    loadUsers(); // Load users
+    loadComments(currentThreadId); 
+    loadUsers(); 
 };
+
+// back up functions /\
