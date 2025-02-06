@@ -1,40 +1,54 @@
+<!-- start of the login page setup -->
 <!DOCTYPE html>
 <html>
 
 <head>
+    <!-- linking font awesome for icons and the custom css for the page -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="static/styles.css">
+    <!-- title of the page -->
     <title>StudySquad Login</title>
 </head>
 
 <body>
 
-<div class="side-nav">
-    <div class="sidebar"></div>
-    <div class="logo"></div>
-</div>
+    <!-- side navigation bar, not really used here but for consistency -->
+    <div class="side-nav">
+        <div class="sidebar"></div>
+        <div class="logo"></div>
+    </div>
 
-<br><br><br><br><br><br><br>
+    <!-- big space to center the login form nicely -->
+    <br><br><br><br><br><br><br>
 
-<div class="login-body content">
-    <h1 style="text-align: center; padding-bottom: 0">StudySquad Login</h1>
-    <br>
-    <form class="login" id="loginform" onsubmit="validateForm(event)" style="text-align: center;">
-        <h2>
-            <span>Username: </span>
-            <input type="text" id="username" required>
-        </h2>
-        <h2>
-            <span>Password: </span>
-            <input type="password" id="password" required>
-            <i class="clickable fa fa-eye" id="eye-icon" style="margin-left: 5px;"></i>
-        </h2>
+    <!-- login form content -->
+    <div class="login-body content">
+        <!-- title of the login page -->
+        <h1 style="text-align: center; padding-bottom: 0">StudySquad Login</h1>
         <br>
-        <button class="clickable button" type="submit">Login</button>
-    </form>
+        <!-- actual login form, it has username and password fields -->
+        <form class="login" id="loginform" onsubmit="validateForm(event)" style="text-align: center;">
+            <h2>
+                <span>Username: </span>
+                <input type="text" id="username" required>
+            </h2>
+            <h2>
+                <span>Password: </span>
+                <input type="password" id="password" required>
+                <!-- icon to toggle password visibility -->
+                <i class="clickable fa fa-eye" id="eye-icon" style="margin-left: 5px;"></i>
+            </h2>
+            <br>
+            <!-- login button to submit the form -->
+            <button class="clickable button" type="submit">Login</button>
+        </form>
 
-    <script src="static/js/login.js"></script>
-    <script src="static/js/script.js"></script>
-</div>
+        <!-- including the JS files for form validation and other functionality -->
+        <script src="static/js/login.js"></script>
+        <script src="static/js/script.js"></script>
+    </div>
 
-<img class="bottom-border" style="z-index: -10;" src="static/images/border.png">
+    <!-- border image at the bottom of the page -->
+    <img class="bottom-border" style="z-index: -10;" src="static/images/border.png">
+</body>
+</html>
